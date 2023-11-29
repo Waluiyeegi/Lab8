@@ -1,3 +1,5 @@
+package main.java;
+
 import javax.management.ObjectName;
 import javax.swing.*;
 import javax.xml.parsers.ParserConfigurationException;
@@ -36,24 +38,14 @@ public class AddressBook extends DefaultListModel implements Serializable{
     }
 
     public String toXML(){
-        String string = "";
+        String string = "<addressbook>\n";
 
-        string += "<AddressBook>\n";
-        for(BuddyInfo buddy : getAddressBookBuddies()){
-            String[] buddyStrings = new String[3];
-            buddyStrings = buddy.toString().split("#");
-            string += "<BuddyInfo>\n";
-            string += "<Name>" + buddyStrings[0] + "</Name>\n";
-            string += "<PhoneNumber>" + buddyStrings[2] + "</PhoneNumber>\n";
-            string += "<Address>" + buddyStrings[1] + "</Address>\n";
-            string += "</BuddyInfo>\n";
+        for(BuddyInfo buddy: buddies){
+            string += buddy.toXML();
         }
-        string += "</AddressBook>\n";
-
-
+        string += "</addressbook>\n";
         return string;
     }
-
 
     public void addBuddy(BuddyInfo buddy) {
 
@@ -159,13 +151,13 @@ public class AddressBook extends DefaultListModel implements Serializable{
         }
     }
 
-    public void exportAddressBookXML(String fileName) throws IOException{
-        StringBuffer strBuff = new StringBuffer();
-        strBuff.append(this.toXML());
-        BufferedWriter stream = new BufferedWriter(new FileWriter(fileName));
-        stream.write(strBuff.toString());
-        stream.close();
 
+    public void exportAddressBookXML(String fileName) throws IOException{
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(this.toXML());
+        BufferedWriter stream = new BufferedWriter(new FileWriter(fileName));
+        stream.write(stringBuffer.toString());
+        stream.close();
     }
 
     public static void main(String[] args) {

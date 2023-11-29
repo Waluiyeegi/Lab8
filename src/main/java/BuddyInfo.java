@@ -1,3 +1,5 @@
+package main.java;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,14 +49,12 @@ public class BuddyInfo implements Serializable {
     }
 
     public String toXML(){
-        String string = "";
-
+        String string = "<BuddyInfo>\n";
         String[] buddyStrings = new String[3];
         buddyStrings = toString().split("#");
-        string += "<BuddyInfo>\n";
         string += "<Name>" + buddyStrings[0] + "</Name>\n";
-        string += "<PhoneNumber>" + buddyStrings[1] + "</PhoneNumber>\n";
-        string += "<Address>" + buddyStrings[2] + "</Address>\n";
+        string += "<Address>" + buddyStrings[1] + "</Address>\n";
+        string += "<PhoneNumber>" + buddyStrings[2] + "</PhoneNumber>\n";
         string += "</BuddyInfo>\n";
 
         return string;
