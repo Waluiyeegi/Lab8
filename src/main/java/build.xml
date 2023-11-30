@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<project name="Hello" default="print message">
+    <target name="print message">
+        <echo message="Hello from Ant!"/>
+    </target>
+</project>

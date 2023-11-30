@@ -1,4 +1,5 @@
-/*
+package main.java;
+
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -9,7 +10,7 @@ class AddressBookTest {
     void fullTestCase(){
         AddressBook adBook = new AddressBook();
         BuddyInfo budInfo1 = new BuddyInfo("Caleb", "123", "Cool");
-        BuddyInfo budInfo2 = new BuddyInfo("Joe", "123", "Mama");
+        BuddyInfo budInfo2 = new BuddyInfo("Joe", "123", "Doe");
 
         adBook.addBuddy(budInfo1);
         adBook.addBuddy(budInfo2);
@@ -28,4 +29,3 @@ class AddressBookTest {
     }
 }
 
- */

@@ -1,12 +1,12 @@
-<AddressBook>
+<addressbook>
 <BuddyInfo>
 <Name>Caleb</Name>
-<PhoneNumber>123</PhoneNumber>
 <Address>Cool</Address>
+<PhoneNumber>123</PhoneNumber>
 </BuddyInfo>
 <BuddyInfo>
 <Name>Joe</Name>
+<Address>Doe</Address>
 <PhoneNumber>123</PhoneNumber>
-<Address>Mama</Address>
 </BuddyInfo>
-</AddressBook>
+</addressbook>
