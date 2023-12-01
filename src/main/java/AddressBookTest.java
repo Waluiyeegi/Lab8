@@ -2,7 +2,8 @@ package main.java;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+
 
 class AddressBookTest {
 
@@ -25,7 +26,7 @@ class AddressBookTest {
         System.out.println("divider");
         System.out.println(adBook2.toXML());
         System.out.println("divider");
-        assertEquals(adBook.toXML(), adBook2.toXML());
+        Assertions.assertEquals(adBook.toXML(), adBook2.toXML());
     }
 }
 
